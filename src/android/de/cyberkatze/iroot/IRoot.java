@@ -228,9 +228,6 @@ public class IRoot extends CordovaPlugin {
               case "isSelinuxFlagInEnabled":
                 WhatisRooted = Utils.isSelinuxFlagInEnabled();
               break;
-              case "detectMagisk":
-                WhatisRooted = this.internalRootDetection.detectMagisk(context);
-              break;
               default: WhatisRooted = this.internalRootDetection.WhatisRooted(action, context);
             }
             boolean toWhatisRooted = WhatisRooted;

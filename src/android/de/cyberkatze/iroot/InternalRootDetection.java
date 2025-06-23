@@ -34,7 +34,7 @@ public class InternalRootDetection {
         LOG.d(Constants.LOG_TAG, "check c5 = checkExecutingCommands: " + c5);
         LOG.d(Constants.LOG_TAG, "check c6 = checkInstalledPackages: " + c6);
         LOG.d(Constants.LOG_TAG, "check c7 = checkforOverTheAirCertificates: " + c7);
-        LOG.d(Constants.LOG_TAG, "check c8 = detctMagisk : " + c8);
+        LOG.d(Constants.LOG_TAG, "check c8 = checkforOverTheAirCertificates: " + c8);
         // LOG.d(Constants.LOG_TAG, "check c8 = isRunningOnEmulator: " + c8);
 
         boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8;
@@ -63,7 +63,7 @@ public class InternalRootDetection {
         LOG.d(Constants.LOG_TAG, "check c6 = checkInstalledPackages: " + c6);
         LOG.d(Constants.LOG_TAG, "check c7 = checkforOverTheAirCertificates: " + c7);
         LOG.d(Constants.LOG_TAG, "check c8 = isRunningOnEmulator: " + c8);
-        LOG.d(Constants.LOG_TAG, "check c9 = detctMagisk : " + c9);
+        LOG.d(Constants.LOG_TAG, "check c9 = detectMagisk: " + c9);
 
         boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8 || c9;
 
@@ -387,19 +387,8 @@ public class InternalRootDetection {
          return objBuild;
      }
 
-    // TODO: https://github.com/tansiufang54/fncgss/blob/master/app/src/main/java/co/id/franknco/controller/RootUtil.java#L126
-    //    private boolean checkServerSocket() {
-    //        try {
-    //            ServerSocket ss = new ServerSocket(81);
-    //            ss.close();
-    //            return true;
-    //        } catch (Exception e) {
-    //            // not sure
-    //        }
-    //        return false;
-    //    }
 
-        public boolean detectMagisk(Context context) {
+    public boolean detectMagisk(Context context) {
         String[] magiskPaths = {
             "/sbin/magisk",
             "/data/adb/magisk",
@@ -434,4 +423,17 @@ public class InternalRootDetection {
 
         return false;
     }
+
+    // TODO: https://github.com/tansiufang54/fncgss/blob/master/app/src/main/java/co/id/franknco/controller/RootUtil.java#L126
+    //    private boolean checkServerSocket() {
+    //        try {
+    //            ServerSocket ss = new ServerSocket(81);
+    //            ss.close();
+    //            return true;
+    //        } catch (Exception e) {
+    //            // not sure
+    //        }
+    //        return false;
+    //    }
+
 }
