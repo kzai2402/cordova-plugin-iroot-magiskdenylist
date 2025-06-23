@@ -24,7 +24,7 @@ public class InternalRootDetection {
         boolean c5 = checkExecutingCommands();
         boolean c6 = checkInstalledPackages(context);
         boolean c7 = checkforOverTheAirCertificates();
-        boolean c8 = detectMagisk();
+        boolean c8 = detectMagisk(context);
         // boolean c8 = isRunningOnEmulator();
 
         LOG.d(Constants.LOG_TAG, "check c1 = isExistBuildTags: " + c1);
@@ -53,7 +53,7 @@ public class InternalRootDetection {
         boolean c6 = checkInstalledPackages(context);
         boolean c7 = checkforOverTheAirCertificates();
         boolean c8 = isRunningOnEmulator();
-        boolean c9 = detectMagisk();
+        boolean c9 = detectMagisk(context);
 
         LOG.d(Constants.LOG_TAG, "check c1 = isExistBuildTags: " + c1);
         LOG.d(Constants.LOG_TAG, "check c2 = doesSuperuserApkExist: " + c2);
@@ -105,7 +105,7 @@ public class InternalRootDetection {
         break;
         case "checkGoogleSDK": restest = WhatisRunningOnEmulator(action);
         break;
-        case "detectMagisk": restest = detectMagisk();
+        case "detectMagisk": restest = detectMagisk(context);
         break;
         default: LOG.e(Constants.LOG_TAG, String.format("[WhatisRooted] action: %s", action));
       }
