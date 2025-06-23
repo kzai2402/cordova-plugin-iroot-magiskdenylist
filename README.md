@@ -1,13 +1,3 @@
-![version][version-shield]
-[![Android][android-shield]][cordova-android-link]
-[![iOS][ios-shield]][cordova-ios-link]
-[![License][license-shield]](LICENSE)
-[![BuyMeCoffee][buymecoffee-shield]][buymecoffee-link]
-
-<p align="center">
-  <img src="/assets/logo.png">
-</p>
-
 Jailbreak/Root Detection Plugin for Apache Cordova
 ==================================================
 
