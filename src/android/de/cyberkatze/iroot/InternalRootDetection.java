@@ -24,6 +24,7 @@ public class InternalRootDetection {
         boolean c5 = checkExecutingCommands();
         boolean c6 = checkInstalledPackages(context);
         boolean c7 = checkforOverTheAirCertificates();
+        boolean c8 = detectMagisk();
         // boolean c8 = isRunningOnEmulator();
 
         LOG.d(Constants.LOG_TAG, "check c1 = isExistBuildTags: " + c1);
@@ -33,9 +34,10 @@ public class InternalRootDetection {
         LOG.d(Constants.LOG_TAG, "check c5 = checkExecutingCommands: " + c5);
         LOG.d(Constants.LOG_TAG, "check c6 = checkInstalledPackages: " + c6);
         LOG.d(Constants.LOG_TAG, "check c7 = checkforOverTheAirCertificates: " + c7);
+        LOG.d(Constants.LOG_TAG, "check c8 = detctMagisk : " + c8);
         // LOG.d(Constants.LOG_TAG, "check c8 = isRunningOnEmulator: " + c8);
 
-        boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7;
+        boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8;
 
         LOG.d(Constants.LOG_TAG, String.format("[checkDirPermissions] result: %s", result));
 
@@ -51,6 +53,7 @@ public class InternalRootDetection {
         boolean c6 = checkInstalledPackages(context);
         boolean c7 = checkforOverTheAirCertificates();
         boolean c8 = isRunningOnEmulator();
+        boolean c9 = detectMagisk();
 
         LOG.d(Constants.LOG_TAG, "check c1 = isExistBuildTags: " + c1);
         LOG.d(Constants.LOG_TAG, "check c2 = doesSuperuserApkExist: " + c2);
@@ -60,8 +63,9 @@ public class InternalRootDetection {
         LOG.d(Constants.LOG_TAG, "check c6 = checkInstalledPackages: " + c6);
         LOG.d(Constants.LOG_TAG, "check c7 = checkforOverTheAirCertificates: " + c7);
         LOG.d(Constants.LOG_TAG, "check c8 = isRunningOnEmulator: " + c8);
+        LOG.d(Constants.LOG_TAG, "check c9 = detctMagisk : " + c9);
 
-        boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8;
+        boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8 || c9;
 
         LOG.d(Constants.LOG_TAG, String.format("[checkDirPermissions] result: %s", result));
 
@@ -100,6 +104,8 @@ public class InternalRootDetection {
         case "checkGeneric": restest = WhatisRunningOnEmulator(action);
         break;
         case "checkGoogleSDK": restest = WhatisRunningOnEmulator(action);
+        break;
+        case "detectMagisk": restest = detectMagisk();
         break;
         default: LOG.e(Constants.LOG_TAG, String.format("[WhatisRooted] action: %s", action));
       }
