@@ -34,7 +34,7 @@ public class InternalRootDetection {
         LOG.d(Constants.LOG_TAG, "check c5 = checkExecutingCommands: " + c5);
         LOG.d(Constants.LOG_TAG, "check c6 = checkInstalledPackages: " + c6);
         LOG.d(Constants.LOG_TAG, "check c7 = checkforOverTheAirCertificates: " + c7);
-        LOG.d(Constants.LOG_TAG, "check c8 = checkforOverTheAirCertificates: " + c8);
+        LOG.d(Constants.LOG_TAG, "check c8 = detectMagisk: " + c8);
         // LOG.d(Constants.LOG_TAG, "check c8 = isRunningOnEmulator: " + c8);
 
         boolean result = c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8;
